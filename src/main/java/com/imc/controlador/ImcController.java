@@ -11,16 +11,16 @@ import com.imc.modelo.Proceso;
 @Controller
 public class ImcController {
 
-    // Equivalente a: private Proceso proceso;
+    
     private final Proceso proceso = new Proceso();
 
-    // Equivalente a: mostrarVistaRegistro()
+    
     @GetMapping("/")
     public String mostrarRegistro() {
-        return "registro";           // abre registro.html
+        return "registro";           
     }
 
-    // Equivalente a: calcularIMC() + mostrarMensaje()
+    
     @PostMapping("/calcular")
     public String calcularIMC(
             @RequestParam String nombre,
@@ -30,14 +30,14 @@ public class ImcController {
             Model model) {
 
         String resultado = proceso.calcularIMC(nombre, edad, peso, estatura);
-        model.addAttribute("resultado", resultado); // envía a la vista
+        model.addAttribute("resultado", resultado); 
         return "registro";
     }
 
-    // Equivalente a: buscarPersona() + mostrarVistaConsulta()
+   
     @GetMapping("/consulta")
     public String mostrarConsulta() {
-        return "consulta";           // abre consulta.html
+        return "consulta";          
     }
 
     @PostMapping("/buscar")
@@ -46,13 +46,13 @@ public class ImcController {
             Model model) {
 
         String datos = proceso.buscarPorNombre(nombre);
-        model.addAttribute("datos", datos);  // envía a la vista
+        model.addAttribute("datos", datos);  
         return "consulta";
     }
 
-    // Equivalente a: mostrarVistaAcerca()
+    
     @GetMapping("/acerca")
     public String mostrarAcerca() {
-        return "acerca";             // abre acerca.html
+        return "acerca";            
     }
 }

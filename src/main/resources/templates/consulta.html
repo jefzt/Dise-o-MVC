@@ -2,23 +2,23 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Consulta IMC</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
 </head>
 <body>
 
     <h2>RESULTADOS IMC</h2>
 
-    <!-- Equivalente al JOptionPane.showInputDialog() -->
     <form action="/buscar" method="post">
         <label>Nombre a buscar:</label>
         <input type="text" name="nombre"/>
         <button type="submit">Buscar</button>
     </form>
 
-    <!-- Equivalente a lblDatos.setText() / mostrarDatos() -->
     <p th:if="${datos}" th:text="${datos}"></p>
 
-    <br>
-    <a href="/">Volver al Registro</a>
+    <div class="nav">
+        <a href="/">Volver al Registro</a>
+    </div>
 
 </body>
 </html>
