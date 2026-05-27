@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registro IMC</title>
+</head>
+<body>
+
+    <h2>CALCULADORA IMC</h2>
+
+    <!-- Equivalente a los JTextField y btnCalcular -->
+    <form action="/calcular" method="post">
+        <label>Nombre:</label>
+        <input type="text" name="nombre"/><br><br>
+
+        <label>Edad:</label>
+        <input type="text" name="edad"/><br><br>
+
+        <label>Peso:</label>
+        <input type="text" name="peso"/><br><br>
+
+        <label>Estatura:</label>
+        <input type="text" name="estatura"/><br><br>
+
+        <button type="submit">Calcular</button>
+    </form>
+
+    <!-- Equivalente a mostrarMensaje() -->
+    <p th:if="${resultado}" th:text="${resultado}"></p>
+
+    <br>
+    <!-- Equivalente a btnVer y btnAcerca -->
+    <a href="/consulta">Ver Consulta</a> |
+    <a href="/acerca">Acerca de</a>
+
+</body>
+</html>
